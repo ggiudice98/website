@@ -802,52 +802,56 @@
     <div class="contact-grid">
       <div class="reveal">
         <div class="eyebrow section-kicker">● 004 — Start a project</div>
-        <h2 class="contact-h2">Tell us<br>about your<br><em>Project.</em></h2>
-        <p class="contact-desc">If you're interested in working with us, complete this form and we'll get back to you within 48 hours.</p>
+        <h2 class="contact-h2">Tell us<br>about the<br><em>build.</em></h2>
+        <p class="contact-desc">If you're interested in working with us, complete the form with a few details about your project. We'll review your message and get back to you within 48 hours.</p>
         <div class="contact-info">
           <div>GIANCARLO@VIPERMEDIA.CA</div>
           <div>+1 613-222-0645</div>
         </div>
       </div>
-      <div class="contact-form reveal">
+      <form class="contact-form reveal" name="contact" netlify netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact">
+        <p style="display:none;"><input name="bot-field"></p>
         <div class="form-row">
           <span class="form-label">Name</span>
-          <input class="form-input" type="text" placeholder="First, Last">
+          <input class="form-input" type="text" name="name" placeholder="First, Last" required>
         </div>
         <div class="form-row">
           <span class="form-label">Company</span>
-          <input class="form-input" type="text" placeholder="Business name">
+          <input class="form-input" type="text" name="company" placeholder="Business name">
         </div>
         <div class="form-row">
           <span class="form-label">Email</span>
-          <input class="form-input" type="email" placeholder="you@company.com">
+          <input class="form-input" type="email" name="email" placeholder="you@company.com" required>
         </div>
         <div class="form-row">
           <span class="form-label">Phone</span>
-          <input class="form-input" type="tel" placeholder="+1 ___ ___ ____">
+          <input class="form-input" type="tel" name="phone" placeholder="+1 ___ ___ ____">
         </div>
         <div class="form-options">
           <div class="form-options-label">Service</div>
           <div class="form-tags">
-            <button class="form-tag active">Video Production</button>
-            <button class="form-tag">Social Media Marketing</button>
-            <button class="form-tag">Not sure yet</button>
+            <button type="button" class="form-tag active" onclick="setTag(this,'service')">Video Production</button>
+            <button type="button" class="form-tag" onclick="setTag(this,'service')">Social Media Marketing</button>
+            <button type="button" class="form-tag" onclick="setTag(this,'service')">Not sure yet</button>
           </div>
+          <input type="hidden" name="service" id="service-input" value="Video Production">
         </div>
         <div class="form-options">
           <div class="form-options-label">Budget</div>
           <div class="form-tags">
-            <button class="form-tag">$2–3.5K</button>
-            <button class="form-tag">$3.5–5K</button>
-            <button class="form-tag">$5–10K</button>
-            <button class="form-tag">$10–20K</button>
-            <button class="form-tag">Open</button>
+            <button type="button" class="form-tag" onclick="setTag(this,'budget')">$1.5–2.5K</button>
+            <button type="button" class="form-tag" onclick="setTag(this,'budget')">$2.5–4K</button>
+            <button type="button" class="form-tag" onclick="setTag(this,'budget')">$5–10K</button>
+            <button type="button" class="form-tag" onclick="setTag(this,'budget')">$10–20K</button>
+            <button type="button" class="form-tag" onclick="setTag(this,'budget')">Open</button>
           </div>
+          <input type="hidden" name="budget" id="budget-input" value="">
         </div>
-        <button class="form-submit">
+        <button type="submit" class="form-submit">
           <span>Submit inquiry</span><span>→</span>
         </button>
-      </div>
+      </form>
     </div>
   </section>
 
